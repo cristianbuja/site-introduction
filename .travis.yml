@@ -22,6 +22,7 @@ before_install:
 script:
   - >
     echo "Running acceptance tests";
+    ddev config global --instrumentation-opt-in=false
     ddev start;
     ddev import-db --src=./data/db.sql;
     ddev import-files --src=./assets;
