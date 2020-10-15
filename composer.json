@@ -1,5 +1,6 @@
 {
     "name": "bk2k/introduction-website",
+    "description": "project introduction website",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
