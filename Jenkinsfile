@@ -1,9 +1,9 @@
 pipeline {
   agent none
   stages {
-    stage('Composer (PHP 7.3)') {
+    stage('Composer') {
       parallel {
-        stage('Composer (PHP 7.3)') {
+        stage('PHP 7.3') {
           agent {
             docker {
               args '-v $HOME/.composer/cache:/.composer/cache'
@@ -12,12 +12,13 @@ pipeline {
 
           }
           steps {
+            sh 'php -v'
             sh 'composer install'
             sh 'composer validate'
           }
         }
 
-        stage('Composer (PHP 7.2)') {
+        stage('PHP 7.2') {
           agent {
             docker {
               image 'typo3gmbh/php72'
@@ -26,6 +27,7 @@ pipeline {
 
           }
           steps {
+            sh 'php -v'
             sh 'composer install'
             sh 'composer validate'
           }
