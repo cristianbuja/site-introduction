@@ -6,9 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('Composer') {
+    stage('Composer (PHP 7.3)') {
       steps {
         sh 'composer install'
+        sh 'composer validate'
       }
     }
 
