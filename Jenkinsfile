@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'typo3gmbh/php73'
-    }
-
-  }
+  agent none
   stages {
     stage('Composer (PHP 7.3)') {
       parallel {
