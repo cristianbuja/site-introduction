@@ -2,7 +2,6 @@ pipeline {
   agent {
     docker {
       image 'typo3gmbh/php73'
-      args 'composer install'
     }
 
   }
